@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Quicksand:wght@300;400;500;600;700&family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./styles.css">
   <title>Frontend Mentor | Order summary card</title>
@@ -12,28 +14,27 @@
 
 </head>
 <body>
+  <img class="background" src="images/pattern-background-desktop.svg" alt="background">
   <main class="main_wrapper"> 
       <div class="img_wrapper">
-        <img src="./images/illustration-hero.svg" alt="dancing_to_music">
+        <img class="hero_banner" src="./images/illustration-hero.svg" alt="dancing_to_music">
       </div>
       <section class="order_info_wrapper">
         <h1>Order Summary</h1>
-        <h2>You can now listen to millions of songs, audiobooks, and podcasts on any 
-          device anywhere you like!</h2>
+        <p>You can now listen to millions of songs, audiobooks, and podcasts on any 
+          device anywhere you like!</p>
         <div class="annual_plan">
-          <img src="images/icon-music.svg" alt="icon-music">
+          <img class="icon_music" src="images/icon-music.svg" alt="icon-music">
           <div class="plan_child">
             <strong>Annual Plan</strong>
-            <h3>$59.99/year</h3>
+            <p>$59.99/year</p>
           </div>
           <a href="#" class="change">Change</a>
         </div>
         <div class="buttons">
-          <button class="payment_button">
-          <a href="#" href="payment_link">Proceed to Payment</a>
+          <button class="payment_button">Proceed to Payment
         </button>
-        <button class="cancel_button">
-          <a href="#" class="cancel_link">Cancel Order</a>
+        <button class="cancel_button">Cancel Order
         </button>
         </div>
       </section>
