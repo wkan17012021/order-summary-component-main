@@ -48,6 +48,7 @@ Users should be able to:
 ### Continued development
 
 The custom css is lengthy, definitely could be condensed as there is repitition of classes. SASS might help.
+02/02/2022: Updated the repo this time practicing and familiarising with SaSS 💪🏽
 
 ### Useful resources
 
