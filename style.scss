@@ -1,0 +1,154 @@
+/* template colours stored as variables */
+$paleBlue: hsl(225, 100%, 94%);
+$veryPaleBlue: hsl(225, 100%, 98%);
+$brightBlue: hsl(245, 75%, 52%);
+$verySaturatedBlue: hsl(224, 23%, 55%);
+$darkBlue: hsl(223, 47%, 23%);
+$redHatFont: "Red Hat Display", sans-serif;
+
+/* mixins for grouped styles */
+@mixin bodyStyle {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $redHatFont;
+  background-color: $paleBlue;
+}
+
+@mixin main_wrapper {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 310px;
+  background-color: white;
+}
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin clippedCorners {
+  border-radius: 15px;
+}
+
+@mixin hoverEffect {
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+/* Apply SASS to css ⬇️ */
+body {
+    @include bodyStyle();
+}
+.background {
+    width: 100vw;
+    height: 38vh;
+}
+.main_wrapper {
+    @include main_wrapper(); // Maybe this could be a separate module
+}
+.img_wrapper {
+    margin-bottom: 0;
+  }
+  .hero_banner {
+    border-radius: 20px 20px 0px 0px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .order_info_wrapper {
+    @include flexCol();
+    max-width: 418px;
+    padding: 1rem;
+  }
+  .order_info_wrapper p {
+    text-align: center;
+    line-height: 2rem;
+    // color: hsl(224, 23%, 55%);
+    color: $darkBlue;
+  }
+  .annual_plan {
+    // background-color: #f9fafa;
+    background-color: $veryPaleBlue;
+    border-radius: 15px;
+    @include clippedCorners();
+    margin-bottom: 1.5rem;
+    padding: 1rem 0 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .icon_music {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+  }
+  .plan_child {
+    @include flexCol();
+  }
+  .plan_child p {
+    color: hsl(224, 23%, 55%);
+    font-weight: 300;
+    margin: auto;
+  }
+  .change {
+    color: $darkBlue;
+    margin: auto;
+    padding-left: 1rem;
+  }
+  .buttons {
+    @include flexCol();
+    width: 100%;
+  }
+  .payment_button {
+    color: white;
+    background-color: $brightBlue;
+    width: 100%;
+    padding: 1rem 0 1rem;
+    margin-bottom: 1rem;
+    border: hidden;
+    border-radius: 10px;
+    font-family: $redHatFont;
+    font-size: 1rem;
+    box-shadow: 0px 10px 18px hsl(244, 51%, 69%);
+  }
+  
+  .cancel_button {
+    color: grey;
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem 0 1rem;
+    border: hidden;
+    font-family: $redHatFont;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 375px) {
+    .background {
+      display: none;
+    }
+  }
+  
+  .change:hover,
+  .payment_button:hover,
+  .cancel_button:hover {
+    @include hoverEffect();
+  }
+  .change:hover {
+    color: hsl(244, 51%, 69%);
+  }
+  
+  .payment_button:hover {
+    background-color: hsl(244, 62%, 65%);
+  }
+  
+  .cancel_button:hover {
+    color: black;
+    font-weight: 700;
+  }
